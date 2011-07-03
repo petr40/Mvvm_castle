@@ -1,0 +1,21 @@
+﻿<Window x:Class="Mvvm_Castle.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="448" Width="607">
+    
+    <Window.Resources>
+        <ResourceDictionary Source="MainWindowResources.xaml"/>
+        
+    </Window.Resources>
+    <Grid>
+        <Button Command="{Binding AddWorkspace}" Margin="0,0,370,384" Content="Add workspace">
+            
+        </Button>
+        <HeaderedContentControl 
+            
+            Content="{Binding Path=Workspaces, UpdateSourceTrigger=PropertyChanged}"
+            ContentTemplate="{StaticResource WorkspacesTemplate}"
+            Header="Tabs" Margin="0,31,0,0" />
+
+    </Grid>
+</Window>

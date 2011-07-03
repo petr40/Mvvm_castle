@@ -1,0 +1,36 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:vm="clr-namespace:Mvvm_Castle.ViewModels"
+                    xmlns:views="clr-namespace:Mvvm_Castle.Views"
+                    >
+
+    <DataTemplate DataType="{x:Type vm:PatientViewModel}">
+        <views:PatientView/>
+    </DataTemplate>
+
+        <DataTemplate x:Key="WorkspacesTemplate">
+        <TabControl 
+            IsSynchronizedWithCurrentItem="True"
+            ItemsSource="{Binding}">
+            
+            <TabControl.ItemTemplate>
+                <DataTemplate>
+                 <StackPanel Orientation="Horizontal">
+                    <Label Content="{Binding TabTitle}"/>
+                        <Button  Width="20" Height="25" Command="{Binding CloseWorkspace}" Background="#FFF4A9A9" />
+                 </StackPanel>
+                </DataTemplate>
+            </TabControl.ItemTemplate>
+            
+        </TabControl>
+    </DataTemplate>
+    
+    
+    <!--<DataTemplate x:Key="WorkspacesItemTemplate">
+        <StackPanel Orientation="Horizontal">
+            <Label Content="{Binding TabTitle}"/>
+            <Button Content="x" Width="15" Height="15" Command="{Binding CloseWorkspace}"/>
+        </StackPanel>
+    </DataTemplate>-->
+    
+</ResourceDictionary>
